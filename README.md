@@ -2,20 +2,16 @@
 
 ![Screenshot](/Screenshot.png)
 
-Copilot for Xcode is an Xcode Source Editor Extension that provides GitHub Copilot, Codeium and ChatGPT support for Xcode.
-
-<a href="https://www.buymeacoffee.com/intitni" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+Copilot for Xcode is an Xcode Source Editor Extension that provides Codeium support for Xcode.
 
 ## Features
 
-- Code Suggestions (powered by GitHub Copilot and Codeium).
-- Chat (powered by OpenAI ChatGPT).
-- Prompt to Code (powered by OpenAI ChatGPT).
-- Custom Commands to extend Chat and Prompt to Code.
-
+- Code Suggestions
+- Chat
+- Indexing
+- 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
 - [Permissions Required](#permissions-required)
 - [Installation and Setup](#installation-and-setup)
   - [Install](#install)
@@ -23,7 +19,6 @@ Copilot for Xcode is an Xcode Source Editor Extension that provides GitHub Copil
   - [Granting Permissions to the App](#granting-permissions-to-the-app)
   - [Setting Up Key Bindings](#setting-up-key-bindings)
   - [Setting Up Suggestion Feature](#setting-up-suggestion-feature)
-    - [Setting Up GitHub Copilot](#setting-up-github-copilot)
     - [Setting Up Codeium](#setting-up-codeium)
     - [Using Locally Run LLMs](#using-locally-run-llms)
   - [Setting Up Chat Feature](#setting-up-chat-feature)
@@ -33,29 +28,6 @@ Copilot for Xcode is an Xcode Source Editor Extension that provides GitHub Copil
 - [Limitations](#limitations)
 - [License](#license)
 
-For frequently asked questions, check [FAQ](https://github.com/intitni/CopilotForXcode/wiki/Frequently-Asked-Questions).
-
-For development instruction, check [Development.md](DEVELOPMENT.md).
-
-For more information, check the [wiki](https://github.com/intitni/CopilotForXcode/wiki)
-
-## Prerequisites
-
-- Public network connection.
-
-For suggestion features:
-
-- For GitHub Copilot users:
-  - [Node](https://nodejs.org/) installed to run the Copilot LSP.
-  - Active GitHub Copilot subscription.
-- For Codeium users:
-  - Active Codeium account.
-- Access to other LLMs.
-
-For chat and prompt to code features:
-
-- A valid OpenAI API key.
-- Access to other LLMs.
 
 ## Permissions Required
 
@@ -76,13 +48,7 @@ For chat and prompt to code features:
 
 ### Install
 
-You can install it via [Homebrew](http://brew.sh/):
-
-```bash
-brew install --cask copilot-for-xcode
-```
-
-Or install it manually, by downloading the `Copilot for Xcode.app` from the latest [release](https://github.com/intitni/CopilotForXcode/releases).
+Or install it manually, by downloading the `Copilot for Xcode.app` from the latest [release].
 
 Please make sure the app is inside the Applications folder.
 
@@ -114,7 +80,7 @@ The extension will work better if you use key bindings.
 
 It looks like there is no way to add default key bindings to commands, but you can set them up in `Xcode settings > Key Bindings`. You can filter the list by typing `copilot` in the search bar.
 
-A [recommended setup](https://github.com/intitni/CopilotForXcode/issues/14) that should cause no conflict is
+A [recommended setup] that should cause no conflict is
 
 | Command             | Key Binding                                            |
 | ------------------- | ------------------------------------------------------ |
@@ -138,22 +104,6 @@ When this hotkey is not set to enabled globally, it will only work when the serv
 
 ### Setting Up Suggestion Feature
 
-#### Setting Up GitHub Copilot
-
-1. In the host app, navigate to "Service - GitHub Copilot" to access your GitHub Copilot account settings.
-2. Click on "Install" to install the language server.
-3. Optionally, set up the path to Node. The default value is simply `node`. Copilot for Xcode.app will attempt to locate Node from the following directories: `/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin`.
-
-   If your Node installation is located elsewhere, you can run `which node` from the terminal to obtain the correct path.
-
-   If you are using a node version manager that provides a shim executable, you will need to find the path to the actual executable. Please refer to the FAQ for more information.
-
-4. Click on "Sign In", and you will be redirected to a verification website provided by GitHub. A user code will be copied to your clipboard.
-5. After signing in, return to the app and click on "Confirm Sign-in" to complete the process.
-6. Go to "Feature - Suggestion" and update the feature provider to "GitHub Copilot".
-
-The installed language server is located at `~/Library/Application Support/com.intii.CopilotForXcode/GitHub Copilot/executable/`.
-
 #### Setting Up Codeium
 
 1. In the host app, navigate to "Service - Codeium" to access the Codeium account settings.
@@ -165,12 +115,12 @@ The installed language server is located at `~/Library/Application Support/com.i
 
 The installed language server is located at `~/Library/Application Support/com.intii.CopilotForXcode/Codeium/executable/`.
 
+5. If you are an on-prem enterprise user, enter the portal url to your codeium service and enable enterprise mode
+
 ### Setting Up Chat Feature
 
 1. In the host app, navigate to "Service - Chat Model".
-2. Update the OpenAI model or create a new one if necessary. Use the test button to verify the model.
-3. Optionally, set up the embedding model in "Service - Embedding Model", which is required for a subset of the chat feature.
-4. Go to "Feature - Chat" and update the chat/embedding feature provider with the one you just updated/created.
+2. Set to use Codeium
 
 ### Managing `CopilotForXcodeExtensionService.app`
 
@@ -180,7 +130,7 @@ You can also set it to quit automatically when the above 2 apps are closed.
 
 ## Update
 
-You can use the in-app updater or download the latest version manually from the latest [release](https://github.com/intitni/CopilotForXcode/releases).
+You can use the in-app updater or download the latest version manually from the latest [release].
 
 After updating, please open Copilot for Xcode.app once and restart Xcode to allow the extension to reload.
 
@@ -192,7 +142,7 @@ If you find that some of the features are no longer working, please first try re
 
 ### Suggestion
 
-The app can provide real-time code suggestions based on the files you have opened. It's powered by GitHub Copilot and Codeium.
+The app can provide real-time code suggestions based on the files you have opened. It's powered by Codeium.
 
 The feature provides two presentation modes:
 
@@ -222,7 +172,7 @@ Commands called by the app:
 
 ### Chat
 
-This feature is powered by ChatGPT. Please ensure that you have set up your OpenAI account before using it.
+This feature is powered by Codeium Chat.
 
 The chat knows the following information:
 
