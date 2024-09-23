@@ -207,7 +207,7 @@ You can use shorthand to represent a scope, such as `@c`, and enable multiple sc
 
 #### Chat Plugins
 
-The chat panel supports chat plugins that may not require an OpenAI API key. For example, if you need to use the `/run` plugin, you just type
+For example, if you need to use the `/run` plugin, you just type
 
 ```
 /run echo hello
