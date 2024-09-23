@@ -1,4 +1,4 @@
-# Codeium for Xcode
+# Copilot for Xcode
 
 Copilot for Xcode is an Xcode Source Editor Extension that provides Codeium support for Xcode.
 
