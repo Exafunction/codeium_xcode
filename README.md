@@ -1,7 +1,5 @@
 # Copilot for Xcode <img alt="Logo" src="/AppIcon.png" align="right" height="50">
 
-![Screenshot](/Screenshot.png)
-
 Copilot for Xcode is an Xcode Source Editor Extension that provides Codeium support for Xcode.
 
 ## Features
@@ -9,7 +7,7 @@ Copilot for Xcode is an Xcode Source Editor Extension that provides Codeium supp
 - Code Suggestions
 - Chat
 - Indexing
-- 
+
 ## Table of Contents
 
 - [Permissions Required](#permissions-required)
